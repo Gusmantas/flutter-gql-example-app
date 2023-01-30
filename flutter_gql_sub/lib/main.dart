@@ -28,7 +28,7 @@ void main() async {
   runApp(GraphQLProvider(
     client: client,
     child: MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Cat necklace dashboard',
       home: Home(),
     ),
   ));

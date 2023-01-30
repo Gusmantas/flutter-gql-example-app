@@ -35,25 +35,29 @@ class DataHandler extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        Center(
-            child: Padding(
-          padding: const EdgeInsets.only(top: 5.0, bottom: 3.0),
-          child: SizedBox(
-              height: 70,
-              width: 800,
-              child: TemperatureCard(temperature: extractTemperature())),
-        )),
-        Center(
-          child: SizedBox(
-            height: 525,
-            width: 800,
-            child: Map(position: extractPosition()),
-          ),
-        )
-      ],
-    );
+    return Scaffold(
+        appBar: AppBar(
+          title: Center(
+              child: Text(
+                  "Device \"${deviceData['newDeviceData']['deviceId']}\" dashboard")),
+        ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Center(
+                child: Padding(
+              padding: const EdgeInsets.only(top: 5.0, bottom: 3.0),
+              child: SizedBox(
+                  height: 70,
+                  child: TemperatureCard(temperature: extractTemperature())),
+            )),
+            Center(
+              child: SizedBox(
+                height: 525,
+                child: Map(position: extractPosition()),
+              ),
+            )
+          ],
+        ));
   }
 }

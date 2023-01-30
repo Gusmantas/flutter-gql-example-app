@@ -35,9 +35,6 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("GraphQL Example"),
-      ),
       body: Subscription(
           options: SubscriptionOptions(document: subscriptionDocument),
           builder: (result) {
@@ -49,7 +46,7 @@ class _HomeState extends State<Home> {
                 child: CircularProgressIndicator(),
               );
             }
-            print(result);
+            // print(result);
             return ResultAccumulator.appendUniqueEntries(
                 latest: result.data,
                 builder: (context, {results}) =>
